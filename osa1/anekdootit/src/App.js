@@ -12,8 +12,6 @@ const App = () => {
 
   const [points, setPoints] = useState(Array.apply(null, Array(anecdotes.length)).map(Number.prototype.valueOf,0));
 
-  console.log(points);
-
   const [selected, setSelected] = useState(0);
 
   const handleClick = () => {
