@@ -32,6 +32,7 @@ const App = () => {
       const contact = persons.find(person => person.name === newName)
       const changedContact = {...person, number: newNumber}
       const id = contact.id
+      console.log(id)
       contactService
         .update(id, changedContact)
         .then(returnedContact => {
@@ -63,6 +64,12 @@ const App = () => {
           setMessage(`${person.name} added`)
           setTimeout(() => {
             setMessage(null)
+          }, 4000)
+        })
+        .catch(error => {
+          setErrorMessage('Name must have at least 3 characters and number 8 characters')
+          setTimeout(() => {
+            setErrorMessage(null)
           }, 4000)
         })
         
